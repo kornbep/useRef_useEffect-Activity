@@ -1,42 +1,39 @@
 import { useEffect, useRef, useState } from "react";
 
 function DraftEditor_starter() {
-    
-  const [text, setText] = useState("");
-  const inputRef = useRef(0);
-  const renderCount = useRef(0);
 
+  const [text, setText] = useState("");
+  const inputRef = useRef(null);
+  const renderCount = useRef(0);
 
   // TODO 1
   useEffect(() => {
     inputRef.current.focus();
-    }, []);
- 
+  }, []);
+
   // TODO 2
   useEffect(() => {
-    console.log('Draft saved: ' , text);
+    console.log("Draft saved:", text);
   }, [text]);
 
-  //TODO3
+  // TODO 3
   renderCount.current += 1;
-    console.log('Render count: ' , renderCount.current); //temporary to check render count
+  console.log("Render count:", renderCount.current);
 
   return (
-    <div>
-      <input ref={inputRef} value={text} onChange={(e) => setText(e.target.value)}/>
-      <p>Character count: {text.length}</p>
-      <p>Render count: {renderCount.current}</p>
+    <>
+      <input
+        ref={inputRef}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
 
-      
-    </div>
+      <p>Character count: {text.length}</p>
+
+      {/* TODO 4 */}
+      <p>Render count: {renderCount.current}</p>
+    </>
   );
 }
-export default DraftEditor_starter
 
-
-/* Dili mobuhat og render ang Ref 
-Lahi sa useState kay ang useState mag-signal 
-man sa React nga naay nagbag-o sa data, mao 
-nga i-trigger sa React ang pag-re-render sa
- component para ma-update ug magpakita sa screen 
- ang pinakabag-ong value. */
+export default DraftEditor_starter;
