@@ -27,12 +27,12 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
-        <Route path="Home" element ={<Home />} />
-        <Route path="About" element ={<About />} />
-        <Route path="Contact" element ={<Contact />} />
-        <Route path="thank-you" element ={<Thankyou />} />
-      </Routes>
+        <Routes>
+            <Route path="Home" element ={<Home />} />
+            <Route path="About" element ={<About />} />
+            <Route path="Contact" element ={<Contact />} />
+            <Route path="thank-you" element ={<Thankyou />} />
+        </Routes>
     </div>
     
   )
